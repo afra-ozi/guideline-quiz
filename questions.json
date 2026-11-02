@@ -1,0 +1,72 @@
+[
+  {
+    "topic": "relevance",
+    "question": "Query: 'pizza near me' from a user in Pune. The result is a pizza place in Mumbai. How relevant is it?",
+    "options": ["Highly relevant", "Partially relevant", "Off-topic for this user"],
+    "answer": 2,
+    "why": "A 'near me' query needs results close to the user's location. A Mumbai restaurant doesn't help a user in Pune."
+  },
+  {
+    "topic": "relevance",
+    "question": "Query: 'python list sort'. The result is the official Python docs page on sorting. Best rating?",
+    "options": ["Highly relevant", "Partially relevant", "Off-topic"],
+    "answer": 0,
+    "why": "It is an authoritative page that directly answers the query."
+  },
+  {
+    "topic": "relevance",
+    "question": "Query: 'jaguar'. With no other context, which result type should rate highest?",
+    "options": ["Only the car brand", "Only the animal", "Either, because the query is ambiguous and both are common meanings"],
+    "answer": 2,
+    "why": "For an ambiguous query, any dominant interpretation can be highly relevant."
+  },
+  {
+    "topic": "llm-rating",
+    "question": "Response A is longer and well written but states one wrong date. Response B is short and fully correct. Which is better?",
+    "options": ["A, because it is more detailed", "B, because accuracy comes first", "Tie"],
+    "answer": 1,
+    "why": "A factual error outweighs style and length."
+  },
+  {
+    "topic": "llm-rating",
+    "question": "The user asked for exactly 3 bullet points. The response gives 5 good bullets. How should Instruction Following be rated?",
+    "options": ["Full marks, the content is good", "Lower, because an explicit constraint was broken", "Not applicable"],
+    "answer": 1,
+    "why": "Explicit format constraints are part of the task, even when the content is good."
+  },
+  {
+    "topic": "llm-rating",
+    "question": "When is 'tie' the right choice in a side-by-side comparison?",
+    "options": ["Whenever you are unsure", "When the differences are only cosmetic", "When both responses are long"],
+    "answer": 1,
+    "why": "Use tie only when neither response is meaningfully better. Don't use it to avoid deciding."
+  },
+  {
+    "topic": "safety",
+    "question": "A user asks a chatbot for a dosage of a prescription medicine. The response gives a specific dose with no caveat. Safety rating?",
+    "options": ["Safe, it answered the question", "Unsafe, it gave medical advice without telling the user to consult a professional", "Not a safety issue"],
+    "answer": 1,
+    "why": "Specific medical guidance without a recommendation to consult a doctor or pharmacist is a safety risk."
+  },
+  {
+    "topic": "annotation",
+    "question": "The guideline doesn't cover an edge case you've found. What should you do?",
+    "options": ["Pick whatever feels right and move on", "Skip the task silently", "Label using the closest rule, then flag it to the QA lead or forum"],
+    "answer": 2,
+    "why": "Flagging gaps helps the guideline improve and keeps the whole team consistent."
+  },
+  {
+    "topic": "annotation",
+    "question": "Review: 'Great phone, but the battery dies by noon.' Overall sentiment?",
+    "options": ["Positive", "Negative", "Mixed / neutral"],
+    "answer": 2,
+    "why": "It has clear positive and negative parts with no dominant overall tone."
+  },
+  {
+    "topic": "annotation",
+    "question": "You notice you labeled the same kind of item two different ways earlier today. Best action?",
+    "options": ["Ignore it, both were reasonable", "Go back, make them consistent with the guideline, and note the rule", "Delete the earlier tasks"],
+    "answer": 1,
+    "why": "Consistency is a core quality metric, and fixing your own drift early prevents audit failures."
+  }
+]
